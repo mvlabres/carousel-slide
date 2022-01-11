@@ -1,0 +1,33 @@
+<template>
+    <div class="container">
+        <template if:true={hasError}>
+            <c-illustration-error
+                message-error={messageError}>
+            </c-illustration-error>
+        </template>
+
+        <template if:false={hasError}>
+            <div class="container-slide" data-id="container-slide">
+               <slot></slot>
+            </div>
+            <div if:true={isScrollButtonVisible} class="scroll-button">
+                <lightning-button-icon 
+                    variant="border-filled"
+                    icon-name="utility:chevronleft"  
+                    alternative-text="chevronleft" 
+                    title="chevronleft"
+                    icon-class="slds-m-around_large"
+                    onclick={toPrevious}>
+                </lightning-button-icon>
+                <lightning-button-icon 
+                    variant="border-filled"
+                    icon-name="utility:chevronright"  
+                    alternative-text="chevronright" 
+                    title="chevronright"
+                    icon-class="slds-m-around_large"
+                    onclick={toNext}>
+                </lightning-button-icon>
+            </div>
+        </template>
+    </div>
+</template>

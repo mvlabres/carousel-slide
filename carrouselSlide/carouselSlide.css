@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-slide{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: space-around;
+    overflow-y: auto;
+    padding-bottom: 60px;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+.container-slide::-webkit-scrollbar,
+.container-slide::-webkit-scrollbar-track, 
+.container-slide::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.scroll-button{
+    width: 10%;
+    margin-top: -50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 1180){
+    .container-slide::-webkit-scrollbar {
+        display: block;
+        width: 10px;
+        max-height: 8px;
+    }
+    
+    .container-slide::-webkit-scrollbar-track {
+        background: transparent;
+        display: block;
+    }
+      
+    .container-slide::-webkit-scrollbar-thumb {
+        display: block;
+        background: rgb(173, 173, 173);
+        border-radius: 5px;
+    }
+
+    .scroll-button{
+        display: none;
+    }
+}
+
